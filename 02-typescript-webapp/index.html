@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Employee Roster</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link href="node_modules/bootswatch/lumen/bootstrap.min.css" rel="stylesheet">
+        <link href="dist/main.css" rel="stylesheet">
+        
+        <!-- Vendor JS -->
+        <script src="node_modules/requirejs/require.js"></script>
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        
+        <script src="dist/main.js"></script>
+        <script>
+            requirejs(['app'], function(app) {
+                console.log("[INFO] Application Initialized")
+            })
+        </script>
+    </head>
+    <body id="main-app" class="container">
+    
+    </body>
+</html>

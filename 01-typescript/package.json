@@ -1,0 +1,29 @@
+{
+  "name": "01-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rd /s /q dist && mkdir dist",
+    "build:app": "tsc",
+    "build:css": "find src -type f -name '*.less' | xargs cat | lessc - > dist/main.css",
+    "build": "npm run clean && npm run build:css && npm run build:app",
+    "watch": "watch \"npm run build\" ./src",
+    "serve": "http-server -o http://127.0.0.1:3000/index.html -p 3000"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "dirwatch": "^1.1.1",
+    "http-server": "^0.9.0",
+    "less": "^2.7.1",
+    "tslint": "^3.10.2",
+    "typescript": "^1.8.10",
+    "watch": "^0.18.0"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "bootswatch": "^3.3.6",
+    "jquery": "^2.2.4"
+  }
+}

@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "module": "amd",
+        "inlineSourceMap": true,
+        "inlineSources": true,
+        "outFile": "./dist/main.js",
+        "pretty": true,
+        "removeComments": true,
+        "rootDir": "./src/",
+        "target": "es5",
+        "noImplicitAny": true
+    },
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}
