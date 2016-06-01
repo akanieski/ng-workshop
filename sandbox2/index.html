@@ -6,6 +6,7 @@
         <script src="node_modules/jquery/dist/jquery.min.js"></script>
         <script src="node_modules/requirejs/require.js"></script>
         <script src="node_modules/angular/angular.min.js"></script>
+        <script src="node_modules/angular-route/angular-route.min.js"></script>
         <script src="dist/main.js"></script>
         <script>
             requirejs(['app'], function(app){
@@ -15,14 +16,8 @@
         </script>
     </head>
     
-    <body class="container" ng-controller="MainCtrl as vm"> 
-        <h1 align=center>Employee Roster</h1>
-        <div class="list-group">
-            <div class="list-group-item" ng-repeat="employee in vm.employees">
-                {{employee.firstName}} {{employee.lastName}} 
-                <span class="badge pull-right">{{employee.age}}</span>
-            </div>
-        </div>
+    <body class="container"> 
+        <ng-view></ng-view>
     </body>
     
 </html>

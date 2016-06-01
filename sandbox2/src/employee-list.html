@@ -1,0 +1,9 @@
+<h1 align=center>Employee Roster</h1>
+<div class="list-group">
+    <div class="list-group-item" ng-repeat="employee in vm.employees">
+        <a href="#/employee/{{employee.employeeId}}">
+            {{employee.firstName}} {{employee.lastName}} 
+            <span class="badge pull-right">{{employee.age}}</span>
+        </a>
+    </div>
+</div>
