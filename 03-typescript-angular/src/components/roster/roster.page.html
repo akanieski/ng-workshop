@@ -1,0 +1,8 @@
+<ul class="list-group">
+    <li class="list-group-item" ng-repeat="emp in vm.employees">
+        <a href="#/employees/{{emp.employeeId}}">
+            {{::emp.firstName}} {{::emp.lastName}}
+            <span class="text-muted pull-right">{{::emp.department}}</span>
+        </a>
+    </li>
+</ul>

@@ -1,11 +1,16 @@
-module SampleApp.Components.Roster {
-    export class RosterController {
-        static $inject: string[] = ['$http'];
-        
-        constructor(private $http: ng.IHttpService) {
-            
-        }
-    }
+import {IEmployeeService} from "../../services/employee.service"
+import {Employee} from "../../models"
+
+export class RosterController {
+    static $inject: string[] = ['EmployeeService'];
     
-    angular.module("SampleApp").controller("RosterController", RosterController);
+    private employees: Employee[];
+    
+    constructor(private employeeService: IEmployeeService) {
+        this.employeeService
+            .getEmployees()
+            .then((employees) => {
+                this.employees = employees;
+            })
+    }
 }
