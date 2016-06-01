@@ -1,11 +1,11 @@
+"use strict"
 var express = require('express');
 var app = express();
 
 var cors = require('cors');
 app.use(cors());
 
-app.get('/api/employees', function (req, res) {
-  res.send([
+let emps = [
       {
           employeeId: "10000",
           firstName: "John",
@@ -27,7 +27,14 @@ app.get('/api/employees', function (req, res) {
           department: "marketing",
           age: 32
       }
-  ]);
+  ];
+
+app.get('/api/employees', function (req, res) {
+  res.send(emps);
+});
+
+app.get('/api/employee/:employeeId', function (req, res) {
+  res.send(emps.filter((e) => e.employeeId == req.params.employeeId).pop());
 });
 
 app.listen(5002, function () {
