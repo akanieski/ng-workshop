@@ -1,7 +1,14 @@
+class Card {
+    suit: string;
+    card: number;
+}
+
 let suits = ["hearts", "spades", "clubs", "diamonds"];
 
-function pickCard(x: {suit: string; card: number; }[]): number;
-function pickCard(x: number): {suit: string; card: number; };
+
+
+function pickCard(x: Card[]): number;
+function pickCard(x: number): Card;
 function pickCard(x: any): any {
     // Check to see if we're working with an object/array
     // if so, they gave us the deck and we'll pick the card
@@ -12,7 +19,10 @@ function pickCard(x: any): any {
     // Otherwise just let them pick the card
     else if (typeof x == "number") {
         let pickedSuit = Math.floor(x / 13);
-        return { suit: suits[pickedSuit], card: x % 13 };
+        let card = new Card();
+        card.card = x % 13;
+        card.suit = suits[pickedSuit];
+        return card;
     }
 }
 
@@ -22,3 +32,5 @@ alert("card: " + pickedCard1.card + " of " + pickedCard1.suit);
 
 let pickedCard2 = pickCard(15);
 alert("card: " + pickedCard2.card + " of " + pickedCard2.suit);
+
+
