@@ -4,7 +4,7 @@ export enum Department {
     Facilities
 }
 export class Employee {
-    id: string;
+    employeeId: string;
     firstName: string;
     lastName: string;
     age: number;
