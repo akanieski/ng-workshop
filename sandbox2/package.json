@@ -1,0 +1,20 @@
+{
+  "name": "sandbox2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.9.0",
+    "typescript": "^1.8.10"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.4",
+    "requirejs": "^2.2.0"
+  }
+}
