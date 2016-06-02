@@ -1,5 +1,6 @@
 {
   "globalDependencies": {
+    "adal-angular": "registry:dt/adal-angular#1.0.8+20160326084755",
     "angular": "registry:dt/angular#1.5.0+20160517064839",
     "angular-route": "registry:dt/angular-route#1.3.0+20160317120654",
     "jquery": "registry:dt/jquery#1.10.0+20160417213236"
