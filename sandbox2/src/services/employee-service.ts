@@ -1,5 +1,5 @@
-import {Employee} from "./models"
-import {IConfig} from "./app"
+import {Employee} from "../models"
+import {IConfig} from "../app"
 
 export interface IEmployeeService {
     getEmployees(): ng.IPromise<Employee[]>

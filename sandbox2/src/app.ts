@@ -1,6 +1,6 @@
-import {EmployeeListCtrl} from "./employee-list-controller"
-import {EmployeeDetailCtrl} from "./employee-detail-controller"
-import {EmployeeService} from "./employee-service"
+import {EmployeeListCtrl} from "./components/employee-list/employee-list-controller"
+import {EmployeeDetailCtrl} from "./components/employee-detail/employee-detail-controller"
+import {EmployeeService} from "./services/employee-service"
 
 export class MainApp {
     
@@ -10,23 +10,29 @@ export class MainApp {
         
         angular
             .module("SampleApp", ['ngRoute'])
+            
             .constant("config", <IConfig>{
                 baseUrl: "http://127.0.0.1:5002"
             })
+            
             .service("EmployeeService", EmployeeService)
-            .controller("EmployeeListCtrl", EmployeeListCtrl)
+            
             .config(['$routeProvider', function($routeProvider: ng.route.IRouteProvider){
+                
                 $routeProvider
+                
                     .when("/employees", <ng.route.IRoute>{
                         controller: EmployeeListCtrl,
                         controllerAs: "vm",
-                        templateUrl: "src/employee-list.html"
+                        templateUrl: "src/components/employee-list/employee-list.html"
                     })
+                    
                     .when("/employee/:employeeId", <ng.route.IRoute>{
                         controller: EmployeeDetailCtrl,
                         controllerAs: "vm",
-                        templateUrl: "src/employee-detail.html"
+                        templateUrl: "src/components/employee-detail/employee-detail.html"
                     })
+                    
                     .otherwise("/employees")
             }])
             

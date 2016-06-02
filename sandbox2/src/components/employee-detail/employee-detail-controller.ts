@@ -1,5 +1,5 @@
-import {Employee} from "./models"
-import {IEmployeeService} from "./employee-service"
+import {Employee} from "../../models"
+import {IEmployeeService} from "../../services/employee-service"
 
 export interface IEmployeeDetailRouteParams {
     employeeId: string
