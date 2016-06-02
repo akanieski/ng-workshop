@@ -2,6 +2,7 @@ import {EmployeeListCtrl} from "./components/employee-list/employee-list-control
 import {EmployeeDetailCtrl} from "./components/employee-detail/employee-detail-controller"
 import {EmployeeService} from "./services/employee-service"
 import {NavbarComponent} from "./components/navbar/navbar-component"
+import {LandingCtrl} from "./components/landing/landing-controller"
 
 export class MainApp {
     
@@ -21,8 +22,8 @@ export class MainApp {
             .component("navBar", new NavbarComponent())
             
             .config(['$locationProvider', function($locationProvider) {
-                    $locationProvider.html5Mode(true).hashPrefix('$');
-                }])
+                //$locationProvider.html5Mode(false).hashPrefix('#');
+            }])
             
             .config([
                 '$httpProvider', 
@@ -35,7 +36,7 @@ export class MainApp {
                         clientId: '4efcbe41-4ab8-4b31-b036-e3af3f837d29',
                         extraQueryParameter: 'nux=1',
                         //cacheLocation: 'localStorage',
-                        requireADLogin: false,
+                        requireADLogin: true,
                         anonymousEndpoints: ["/"]
                     }, $httpProvider);
                 
@@ -46,7 +47,7 @@ export class MainApp {
                 $routeProvider
                     
                     .when("/landing", <ng.route.IRoute>{
-                        controller: EmployeeDetailCtrl,
+                        controller: LandingCtrl,
                         controllerAs: "vm",
                         templateUrl: "src/components/landing/landing.html",
                         requireADLogin: false

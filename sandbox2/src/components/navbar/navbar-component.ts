@@ -7,9 +7,11 @@ export class NavbarController {
     
     constructor(private scope: ng.IScope, private adal: adal.AdalAuthenticationService) {
         this.header = "Employee Roster"
-        this.menu = [
-            ["Home", "/employees"],
-        ]
+        this.menu = []
+        
+        if (this.adal.userInfo) {
+            this.menu.push(["Home", "#/employees"])
+        }
     }
     
     logout() {
