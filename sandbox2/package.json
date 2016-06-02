@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:app": "tsc",
+    "clean": "rd /q /s dist && mkdir dist",
+    "build:html": "xcopy /s src\\*.html dist\\ && xcopy index.html dist\\",
+    "build": "npm run clean && npm run build:app && npm run build:html",
+    "serve-backend": "node ./tasks/serve-backend.js",
+    "serve-frontend": "http-server dist",
+    "start": "npm run build && npm run serve-frontend"
   },
   "author": "",
   "license": "ISC",

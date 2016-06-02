@@ -24,13 +24,13 @@ export class MainApp {
                     .when("/employees", <ng.route.IRoute>{
                         controller: EmployeeListCtrl,
                         controllerAs: "vm",
-                        templateUrl: "src/components/employee-list/employee-list.html"
+                        templateUrl: "components/employee-list/employee-list.html"
                     })
                     
                     .when("/employee/:employeeId", <ng.route.IRoute>{
                         controller: EmployeeDetailCtrl,
                         controllerAs: "vm",
-                        templateUrl: "src/components/employee-detail/employee-detail.html"
+                        templateUrl: "components/employee-detail/employee-detail.html"
                     })
                     
                     .otherwise("/employees")
